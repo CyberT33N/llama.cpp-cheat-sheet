@@ -29,6 +29,14 @@ cd build/bin
 
 
 
+
+<br><br>
+<br><br>
+
+
+
+
+
 # Files
 
 ## GGUF (.gguf)
@@ -49,8 +57,8 @@ Option 2: Merge into one file
 - Das Tool erkennt automatisch, dass es die Dateien 00002-of-00004, 00003-of-00004, und 00004-of-00004 zusammenfügen muss.
 - Alle Dateien müssen sich im selben Verzeichnis befinden.
 ```shell
-~/llama.cpp/gguf-split --merge DeepSeek-Coder-V2-Instruct-Q4_K_M-00001-of-00004.gguf DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf
-
+cd /home/UserName/Projects/ai/resources/models/llm/deepseek/DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf/
+/home/UserName/Projects/ai/LLM/RUNTIME/llama.cpp/build/bin/llama-gguf-split --merge DeepSeek-Coder-V2-Instruct-Q4_K_M-00001-of-00004.gguf DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf
 ```
 
 
