@@ -2,6 +2,54 @@
 
 
 
+
+
+# Files
+
+## GGUF (.gguf)
+- https://huggingface.co/bartowski/DeepSeek-Coder-V2-Instruct-GGUF
+
+### Shared Model
+- Most of the time the .gguf file is splitted in multiple files because of the size so you can do following:
+
+
+Option 1: Run shared model:
+- llama.cpp unterstützt mittlerweile Modelle, die über mehrere Dateien verteilt sind (z. B. GGUF-Shards). Du musst lediglich eine der Dateien (meist die erste) angeben, und llama.cpp erkennt automatisch, dass es sich um ein sharded Modell handelt.
+```shell
+./llama-cli -m DeepSeek-Coder-V2-Instruct-Q4_K_M-00001-of-00004.gguf
+```
+
+
+Option 2: Merge into one file
+- Das Tool erkennt automatisch, dass es die Dateien 00002-of-00004, 00003-of-00004, und 00004-of-00004 zusammenfügen muss.
+- Alle Dateien müssen sich im selben Verzeichnis befinden.
+```shell
+~/llama.cpp/gguf-split --merge DeepSeek-Coder-V2-Instruct-Q4_K_M-00001-of-00004.gguf DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+___
+___
+<br><br>
+
+
+
+
+
 # CLI
 ```shell
 llama-cli -m model.gguf
