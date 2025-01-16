@@ -124,6 +124,7 @@ llama-cli -m model.gguf -p "I believe the meaning of life is" -n 128 -no-cnv
 
 # I believe the meaning of life is to find your own truth and to live in accordance with it. For me, this means being true to myself and following my passions, even if they don't align with societal expectations. I think that's what I love about yoga – it's not just a physical practice, but a spiritual one too. It's about connecting with yourself, listening to your inner voice, and honoring your own unique journey.
 ```
+- -n means numer of token for output
 
 
 <br><br>
