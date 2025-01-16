@@ -2,6 +2,31 @@
 
 
 
+# Install
+```shell
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp
+
+
+# https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md
+# CUDA BUILD
+cmake -B build -DGGML_CUDA=ON
+cmake --build build --config Release
+
+cd build/bin
+./llama-cli -m "/home/user/test/xxxxxxxxxx.gguf"
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Files
@@ -27,6 +52,16 @@ Option 2: Merge into one file
 ~/llama.cpp/gguf-split --merge DeepSeek-Coder-V2-Instruct-Q4_K_M-00001-of-00004.gguf DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf
 
 ```
+
+
+
+
+
+
+
+
+
+
 
 
 
