@@ -39,6 +39,9 @@ cd build/bin
 
 # Files
 
+
+<details><summary>Click to expand..</summary>
+
 ## GGUF (.gguf)
 - https://huggingface.co/bartowski/DeepSeek-Coder-V2-Instruct-GGUF
 
@@ -60,6 +63,23 @@ Option 2: Merge into one file
 cd /home/UserName/Projects/ai/resources/models/llm/deepseek/DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf/
 /home/UserName/Projects/ai/LLM/RUNTIME/llama.cpp/build/bin/llama-gguf-split --merge DeepSeek-Coder-V2-Instruct-Q4_K_M-00001-of-00004.gguf DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf
 ```
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -103,6 +123,19 @@ llama-cli -m model.gguf
 # > what is 1+1?
 # Easy peasy! The answer to 1+1 is... 2!
 ```
+
+<br><br>
+
+
+## Use GPU
+- -ngl N, --n-gpu-layers N: When compiled with GPU support, this option allows offloading some layers to the GPU for computation. Generally results in increased performance.
+```shell
+ ./llama-cli -m "/home/userName/Projects/ai/resources/models/llm/deepseek/DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf/DeepSeek-Coder-V2-Instruct-Q4_K_M.gguf" -p "I believe the meaning of life is" -n 128 -no-cnv -ngl 5
+```
+
+
+
+
 
 <br><br>
 
