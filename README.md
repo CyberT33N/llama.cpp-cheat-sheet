@@ -19,8 +19,8 @@ which nvcc && nvcc --version # Fundstelle + Version
 # CUDA BUILD
 rm -rf build
 
-# Build with tests
-cmake -B build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-pthread"
+# Build without tests or conda gives error
+cmake -B build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release -DLLAMA_BUILD_TESTS=OFF
 cmake --build build -j"$(nproc)"
 
 cd build/bin
