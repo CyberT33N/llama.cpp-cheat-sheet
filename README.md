@@ -10,8 +10,8 @@ cd llama.cpp
 
 # https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md
 # CUDA BUILD
-cmake -B build -DGGML_CUDA=ON
-cmake --build build --config Release
+cmake -B build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release -j"$(nproc)"
 
 cd build/bin
 ./llama-cli -m "/home/user/test/xxxxxxxxxx.gguf"
