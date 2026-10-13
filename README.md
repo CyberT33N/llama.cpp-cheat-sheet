@@ -3,15 +3,22 @@
 
 
 # Install
+- Requirements: CUDA (https://github.com/CyberT33N/cuda-cheat-sheet)
+
 ```shell
 git clone https://github.com/ggerganov/llama.cpp
 cd llama.cpp
 
+conda activate cuda          # Prompt muss (cuda) zeigen
+which nvcc && nvcc --version # Fundstelle + Version
+
 
 # https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md
 # CUDA BUILD
+rm -rf build
 cmake -B build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release
-cmake --build build --config Release -j"$(nproc)"
+cmake --build build -j"$(nproc)"
+
 
 cd build/bin
 ./llama-cli -m "/home/user/test/xxxxxxxxxx.gguf"
