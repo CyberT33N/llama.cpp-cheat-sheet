@@ -3,6 +3,8 @@
 
 
 # Install
+
+## With conda
 - Requirements: CUDA (https://github.com/CyberT33N/cuda-cheat-sheet)
 
 ```shell
@@ -16,9 +18,10 @@ which nvcc && nvcc --version # Fundstelle + Version
 # https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md
 # CUDA BUILD
 rm -rf build
-cmake -B build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j"$(nproc)"
 
+# Build with tests
+cmake -B build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-pthread"
+cmake --build build -j"$(nproc)"
 
 cd build/bin
 ./llama-cli -m "/home/user/test/xxxxxxxxxx.gguf"
